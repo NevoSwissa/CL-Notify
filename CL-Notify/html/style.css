@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap");
+
+html,
+body {
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.notification-container {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  max-width: 400px;
+  z-index: 9999;
+}
+
+.notification {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: rgba(242, 242, 242, 0.8);
+  color: #030303;
+  padding: 10px 20px;
+  border-radius: 9px;
+  margin-bottom: 10px;
+  max-height: 100px;
+  opacity: 0;
+}
+
+.notification.active {
+  animation: fadeIn 0.7s ease;
+  animation-fill-mode: forwards;
+}
+
+.notification.remove {
+  animation: fadeOut 0.7s ease;
+  animation-fill-mode: forwards;
+}
+
+.notification i {
+  margin-right: 9px;
+  margin-left: -7px;
+  font-size: 22px;
+  color: #333333;
+}
+
+.notification.primary {
+  border-left: 13px solid #7CB9E8; 
+}
+
+.notification.success {
+  border-left: 13px solid #32DE84; 
+}
+
+.notification.error {
+  border-left: 13px solid #FD5C63;
+}
+
+.notification.ambulance {
+  border-left: 13px solid #AA0000; 
+}
+
+.notification.police {
+  border-left: 13px solid #00308F;
+}
+
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 0 3px 0 0;
+  animation: timerFill linear;
+}
+
+@keyframes timerFill {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
