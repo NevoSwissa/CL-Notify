@@ -5,6 +5,8 @@ Join our Discord server for future updated and more script releases : https://di
 
 Preview : 
 
+![image](https://github.com/NevoSwissa/CL-Notify/assets/96447671/60f4d645-a4ce-414e-9995-d066d029bc3f)
+
 # Usage
 
 In order to replace the qb-core default notification system follow the steps :
