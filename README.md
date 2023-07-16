@@ -24,6 +24,7 @@ function QBCore.Functions.Notify(text, texttype, length)
 end
 ```
 
+Currently the script does NOT support caption usage type notification, this would be added in a future update.
 
 # Credits
 
