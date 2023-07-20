@@ -35,11 +35,12 @@ function Notify(message, type, time) {
   var notification = $('<div>').addClass('notification').addClass(type);
   var icon = $('<i>').addClass(iconClass);
   var messageElement = $('<span>').text(message);
+  var titleElement = $('<div>').addClass('title').text(getTitleByType(type));
   var progressElement = $('<div>').addClass('progress');
 
   progressElement.css('background-color', getProgressColor(type));
 
-  notification.append(icon, messageElement, progressElement);
+  notification.append(icon, titleElement, messageElement, progressElement);
   $('#notification-container').append(notification);
 
   notification.addClass('active');
@@ -75,16 +76,32 @@ function Notify(message, type, time) {
 function getProgressColor(type) {
   switch (type) {
     case "success":
-      return "#32DE84";
+      return "rgba(168, 221, 158, 0.8)";
     case "error":
-      return "#FD5C63";
+      return "rgb(242, 151, 155, 0.8)";
     case "ambulance":
-      return "#AA0000";
+      return "rgba(170, 0, 0, 0.8)";
     case "police":
-      return "#00308F";
+      return "rgba(0, 48, 143, 0.8)";
     case "primary":
     default:
-      return "#7CB9E8";
+      return "rgba(182, 229, 244, 0.8)";
+  }
+}
+
+function getTitleByType(type) {
+  switch (type) {
+    case "success":
+      return "Success";
+    case "error":
+      return "Error";
+    case "ambulance":
+      return "Ambulance";
+    case "police":
+      return "Police";
+    case "primary":
+    default:
+      return "Info";
   }
 }
 
